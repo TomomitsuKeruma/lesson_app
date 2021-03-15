@@ -1,24 +1,29 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## teachers テーブル
 
-Things you may want to cover:
+| Column    | Type   | Options                  |
+| --------  | ------ | ------------------------ |
+| name      | string | null: false              |
+| email     | string | null: false, unique:true |
+| password  | string | null: false              |
+| lastname  | string | null: false              |
+| firstname | string | null: false              |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :lessons
 
-* Configuration
+## lessons テーブル
 
-* Database creation
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| title  | string | null: false |
+| video  |        | null: false |
+| text   | string |             |
+| image  |        |             |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :teacher
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
